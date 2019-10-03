@@ -4,5 +4,5 @@
 ## Skład grupy:
 - **Przemysław Wujek** *indeks*
 - **Paweł Czarnecki** *234974*
-- **Michał Madarasz** *indeks*
+- **Michał Madarasz** *238903*
 - **Artiom Vasiliuk** *indeks*
