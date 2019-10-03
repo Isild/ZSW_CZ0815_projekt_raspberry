@@ -5,4 +5,4 @@
 - **Przemysław Wujek** *indeks*
 - **Paweł Czarnecki** *234974*
 - **Michał Madarasz** *238903*
-- **Artiom Vasiliuk** *indeks*
+- **Artsiom Vasiliuk** *239517*
