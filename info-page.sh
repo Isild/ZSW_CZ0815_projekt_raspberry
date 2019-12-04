@@ -120,6 +120,48 @@ do
 	fi
 #	echo "$var"
 done
+
+listaMd=`cat /proc/mdstat | grep -Eo '^md[0-9]'`
+#echo "lista: $listaMd"
+stateWas=0
+for var in $listaMd
+do
+	echo "<br>"
+	for v in `sudo mdadm --detail /dev/$var`
+	do
+		if [[ "$v" == "/dev/md"[0-9]* ]] ; then
+			echo "<b>"
+		fi
+		if [[ "$v" == "Version" ]] || [[ "$v" == "/dev/md"[0-9]* ]] || [[ "$v" == "Creation" ]] || [[ "$v" == "Raid" ]] || [[ "$v" == "Array" ]] || [[ "$v" == "Used" ]] || [[ "$v" == "Total" ]] || [[ "$v" == "Persistence" ]] || [[ "$v" == "Update" ]] || [[ "$v" == "Active" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Failed" ]] || [[ "$v" == "Spare" ]] || [[ "$v" == "Name" ]] || [[ "$v" == "UUID" ]] || [[ "$v" == "Events" ]] || [[ "$v" == "Number" ]] ; then
+			echo "<br>"
+		fi
+		if [[ "$v" == "State" ]] ; then
+			#$stateWas=1
+			if [ $stateWas -eq 0 ] ; then
+				echo "<br>"
+				stateWas=1
+				echo "$v"
+				stateWas=1
+				continue
+			fi
+			#echo "<br>"
+		fi
+
+		echo "$v"
+
+		if [[ "$v" == "State" ]] ; then
+                        if [ $stateWas -eq 1 ] ; then
+                                echo "<br>"
+                        fi
+                        #echo "<br>"
+                fi
+		if [[ "$v" == "/dev/md"[0-9]* ]] ; then
+                        echo "</b>"
+                fi
+	done
+	stateWas=0
+done
+
 echo "</div>"
 
 echo "<script>"
@@ -135,4 +177,3 @@ echo "</script>"
 
 echo "</body>"
 echo "</html>"
-
