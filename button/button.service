@@ -1,0 +1,13 @@
+[Unit]
+Description=button service
+After=network.target network-online.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+Restart=always
+ExecStart=/usr/bin/python /home/pi/button/button.py
+
+[Install]
+WantedBy=multi-user.target
