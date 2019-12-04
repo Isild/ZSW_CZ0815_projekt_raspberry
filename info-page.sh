@@ -132,7 +132,7 @@ do
 		if [[ "$v" == "/dev/md"[0-9]* ]] ; then
 			echo "<b>"
 		fi
-		if [[ "$v" == "Version" ]] || [[ "$v" == "/dev/md"[0-9]* ]] || [[ "$v" == "Creation" ]] || [[ "$v" == "Raid" ]] || [[ "$v" == "Array" ]] || [[ "$v" == "Used" ]] || [[ "$v" == "Total" ]] || [[ "$v" == "Persistence" ]] || [[ "$v" == "Update" ]] || [[ "$v" == "Active" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Failed" ]] || [[ "$v" == "Spare" ]] || [[ "$v" == "Name" ]] || [[ "$v" == "UUID" ]] || [[ "$v" == "Events" ]] || [[ "$v" == "Number" ]] ; then
+		if [[ "$v" == "Version" ]] || [[ "$v" == "/dev/md"[0-9]* ]] || [[ "$v" == "Creation" ]] || [[ "$v" == "Raid" ]] || [[ "$v" == "Array" ]] || [[ "$v" == "Used" ]] || [[ "$v" == "Total" ]] || [[ "$v" == "Persistence" ]] || [[ "$v" == "Update" ]] || [[ "$v" == "Active" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Working" ]] || [[ "$v" == "Failed" ]] || [[ "$v" == "Spare" ]] || [[ "$v" == "Name" ]] || [[ "$v" == "UUID" ]] || [[ "$v" == "Events" ]] || [[ "$v" == "Number" ]] || [[ "$v" == "/dev/md/"[0-9] ]] ; then
 			echo "<br>"
 		fi
 		if [[ "$v" == "State" ]] ; then
